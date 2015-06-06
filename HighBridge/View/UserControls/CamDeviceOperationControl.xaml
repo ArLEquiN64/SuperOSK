@@ -12,6 +12,8 @@
         <StackPanel.Resources>
             <ObjectDataProvider x:Key="Devices" ObjectType="Util:DeviceFilters" MethodName="Get"/>
         </StackPanel.Resources>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Stretch" TextWrapping="Wrap" Text="Please enter your name." />
+        <TextBox x:Name="NameBox"  Width="300" Height="50" />
         <Label Content="Device"/>
         <ComboBox Name="DeviceListCombo"
                   ItemsSource="{Binding Source ={StaticResource Devices}}"
@@ -20,7 +22,7 @@
         <StackPanel Height="28" Orientation="Horizontal" HorizontalAlignment="Right">
             <Label Name="StatusLabel">status</Label>
             <Button Width ="80" Content="Connect" Click="Connect_Click"/>
-            <Button Width ="80" Content="Disconnect" Click="Disconnect_Click"/>
+            <!--<Button Width ="80" Content="Disconnect" Click="Disconnect_Click"/>-->
         </StackPanel>
     </StackPanel>
 </UserControl>
