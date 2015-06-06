@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace HighBridge.View
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// RegisterPage.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class RegisterPage : Page
     {
-        public MainWindow()
+        public RegisterPage()
         {
             InitializeComponent();
         }
-
     }
 }

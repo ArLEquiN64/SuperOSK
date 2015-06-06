@@ -7,7 +7,7 @@ namespace HighBridge.Common.Commands
         public AlwaysExecutableDelegateCommand(Action<object> act)
             : base(act)
         {
-
+            
         }
         public override bool CanExecute(object parameter)
         {

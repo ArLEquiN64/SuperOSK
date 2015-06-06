@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using AForge.Video;
+using HighBridge.Common.Util;
 
 namespace HighBridge.View
 {
@@ -23,6 +13,14 @@ namespace HighBridge.View
         public MainPage()
         {
             InitializeComponent();
+            camDeviceCtrl.NewFrameGot += CamDeviceCtrlNewFrameGot;
+        }
+        private void CamDeviceCtrlNewFrameGot(object sender, NewFrameEventArgs eventArgs)
+        {
+            picture.Dispatcher.Invoke(() =>
+            {
+                picture.Source = BitmapToBitmapFrame.Convert(eventArgs.Frame);
+            });
         }
     }
 }
