@@ -19,10 +19,10 @@ router.post('/', function(req, res, next) {
       client.set(req.body.id, JSON.stringify(json), function(err, keys_replies){
         if(err){throw err;}
         else{res.send(req.body.name + " is registered.");return;}
+        return;
       });
     }
-    else{res.send("already registered.");}
-    res.send("error occured.");
+    else{res.send("already registered.");return;}
   });
 });
 
