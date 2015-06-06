@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
+using HighBridge.Model;
+using HighBridge.ViewModel;
 
 namespace HighBridge.View.Pages
 {
@@ -10,6 +13,7 @@ namespace HighBridge.View.Pages
         public RegisterPage()
         {
             InitializeComponent();
+            DataContext=new RegisterPageViewModel();
         }
     }
 }

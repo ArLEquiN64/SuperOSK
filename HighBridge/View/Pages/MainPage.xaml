@@ -4,17 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:view="clr-namespace:HighBridge.View"
-      xmlns:userControls="clr-namespace:HighBridge.View.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="MainPage">
     <Grid>
         <StackPanel HorizontalAlignment="Center">
-            <userControls:CamDeviceOperationControl
-                Height="800"
-                Width="1000"
-                x:Name="CamDeviceCtrl" 
-                VerticalAlignment="Top"/>
             <!--<Image x:Name="Picture" 
                    HorizontalAlignment="Left" 
                    Height="246" 

@@ -15,7 +15,7 @@ namespace HighBridge.Model
 
         public static void Connect(string deviceName)
         {
-            if(deviceName=="")return;
+            if(deviceName==null)return;
             Device = new VideoCaptureDevice(deviceName);
             Device.NewFrame += NewFrameGot;
             Device.Start();
