@@ -65,6 +65,10 @@
     </ApplicationDefinition>
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />
+    <Compile Include="Common\Util\FaceData.cs" />
+    <Compile Include="Common\Util\IRegister.cs" />
+    <Compile Include="Common\Util\IUserSerch.cs" />
+    <Compile Include="Model\UserData.cs" />
     <Compile Include="Model\VideoCaptureDeviceManager.cs" />
     <Compile Include="ViewModel\CommentUnitViewModel.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />

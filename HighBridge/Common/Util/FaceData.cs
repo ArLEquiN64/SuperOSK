@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Net;
 using System.Text;
 
-namespace HighBridge.Common.Util.DocomoAPI
+namespace HighBridge.Common.Util
 {
     class FaceDate
     {
