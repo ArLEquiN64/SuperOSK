@@ -11,7 +11,6 @@ namespace HighBridge.ViewModel
     {
         public LoginPageViewModel()
         {
-            
         }
     }
 }
