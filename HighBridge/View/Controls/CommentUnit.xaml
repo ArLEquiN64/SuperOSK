@@ -5,28 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewmodel="clr-namespace:HighBridge.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="600"
-             d:DataContext="{viewmodel:CommentUnitViewModelIndesign}">
+             d:DesignHeight="300" d:DesignWidth="600">
+    <d:UserControl.DataContext>
+        <viewmodel:CommentUnitViewModelIndesign />
+    </d:UserControl.DataContext>
     <UserControl.Resources>
     </UserControl.Resources>
   
     <Grid Background="White">
-        <StackPanel Orientation="Horizontal">
-            <Image Source="{Binding Source}"></Image>
+        
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" 
-                           Text="{Binding Name}">
+            <Image Source="{Binding Image}"></Image>
+            <TextBlock Grid.Row="0" 
+                       Grid.Column="1"
+                       FontSize="40"
+                       Text="{Binding Name}">
                 </TextBlock>
                 <TextBlock Width="600" 
                            Grid.Row="1" 
                            TextWrapping="Wrap" 
                            Text="{Binding Comment}" 
+                           Grid.Column="1"
                            FontSize="30"></TextBlock>
             </Grid>
-        </StackPanel>
+        
     </Grid>
 </UserControl>
