@@ -38,8 +38,6 @@ namespace HighBridge.ViewModel
         {
             return VideoCaptureDeviceManager.Bitmap;
         }
-    
-
 
 
     public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }
