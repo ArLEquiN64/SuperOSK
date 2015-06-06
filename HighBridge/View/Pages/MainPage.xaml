@@ -7,9 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="MainPage">
-    <Grid>
-        <StackPanel HorizontalAlignment="Center">
-           
-        </StackPanel>
-    </Grid>
+   <Grid>
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+       <StackPanel>
+           <Image ></Image>
+       </StackPanel>
+   </Grid>
 </Page>
