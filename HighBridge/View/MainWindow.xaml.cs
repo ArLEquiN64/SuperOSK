@@ -26,6 +26,7 @@ namespace HighBridge.View
         {
             InitializeComponent();
             Instance = this;
+            this.ShowsNavigationUI = false;
         }
 
     }
