@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:util="clr-namespace:HighBridge.Common.Util"
+      xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" 
+      xmlns:winForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="LoginPage" Background="White">
@@ -47,13 +49,24 @@
                   DisplayMemberPath="Name"
                   SelectedValuePath="MonikerString"/>
             </Grid>
-            <Button Width ="200" 
+            <Button x:Name="FaceMe"
+                    Width ="200" 
                     Height="100"
                     Margin="40"
                     Content="Face me!" 
                     FontSize="40"
                     HorizontalAlignment="Center"
-                    Command="{Binding ConnectCommand}"/>
+                    Command="{Binding ConnectCommand}" 
+                    Click="FaceMe_Click"/>
+            <Grid x:Name ="Loading"
+                  Visibility="Collapsed"
+                  Margin="0,80,0,0"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Center">
+                <wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
+                    <winForms:PictureBox />
+                </wfi:WindowsFormsHost>
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>
