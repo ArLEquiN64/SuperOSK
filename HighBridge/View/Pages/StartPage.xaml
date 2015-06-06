@@ -7,7 +7,7 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="StartPage">
 
-    <Grid>
+    <Grid Background="Beige">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
@@ -17,13 +17,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
+        <Grid Grid.Row="0" Grid.Column="0" Background="#80ff80">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Button x:Name="SignUp"  Grid.Row ="1" Grid.Column="0" Width="150" Height="150" Click="SignUp_Click"></Button>
+        <Grid Grid.Row="0" Grid.Column="1" Background="#80ff80"></Grid>
+        <Button x:Name="SignUp" Grid.Row ="1" Grid.Column="0" Width="150" Height="150" Click="SignUp_Click"></Button>
         <Button x:Name="SignIn" Grid.Row ="1" Grid.Column="1" Width="150" Height="150" Click="SignIn_Click"></Button>
     </Grid>
 </Page>
