@@ -23,6 +23,7 @@
                    Foreground="DarkGray"
                    Text="Name" />
                 <TextBox x:Name="NameBox" 
+                     Text="{Binding UserName}"
                      FontSize="40"
                      HorizontalAlignment="Right"
                      Width="300" 

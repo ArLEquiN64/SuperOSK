@@ -63,9 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AccountManager.cs" />
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />
-    <Compile Include="Common\Util\FaceData.cs" />
+    <Compile Include="Model\FaceData.cs" />
     <Compile Include="Common\Util\IRegister.cs" />
     <Compile Include="Common\Util\IUserSerch.cs" />
     <Compile Include="Model\UserData.cs" />

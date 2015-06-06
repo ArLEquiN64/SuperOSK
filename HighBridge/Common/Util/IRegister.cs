@@ -12,4 +12,5 @@ namespace HighBridge.Common.Util
     {
         void AddUser(UserData userdata);
     }
+
 }

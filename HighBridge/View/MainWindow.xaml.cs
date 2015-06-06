@@ -20,9 +20,12 @@ namespace HighBridge.View
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        public static MainWindow Instance { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            Instance = this;
         }
 
     }

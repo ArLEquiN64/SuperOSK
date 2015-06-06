@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,6 @@ namespace HighBridge.Common.Util
 {
     interface IUserSerch
     {
-        UserData[] Serch(UserData userdata);
+        UserData[] Serch(Bitmap userdata);
     }
 }

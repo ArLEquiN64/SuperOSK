@@ -1,27 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HighBridge.Common.Commands;
 using HighBridge.Common.Util;
 using HighBridge.Model;
+using HighBridge.View;
 
 namespace HighBridge.ViewModel
 {
-    class RegisterPageViewModel:ViewModelBase
+    internal class RegisterPageViewModel : ViewModelBase
     {
         private string _deviceName;
+        private string _userName;
 
         public RegisterPageViewModel()
         {
-            ConnectCommand=new AlwaysExecutableDelegateCommand(o =>
+            ConnectCommand = new AlwaysExecutableDelegateCommand(o =>
             {
-                VideoCaptureDeviceManager.Connect(DeviceName);
+                AddUser();
             });
         }
 
-        public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }
+        private async void AddUser()
+        {
+            if (UserName == null) return;
+            VideoCaptureDeviceManager.Connect(DeviceName);
+            var data = await GetBitMapAsync();
+           //TODO  var newUser = new UserData(FaceDate.GetFaceDate(data), UserName);
+           //TODO   AccountManager.AddUser(newUser);
+
+        }
+
+        private async Task<Bitmap> GetBitMapAsync()
+        {
+            return VideoCaptureDeviceManager.Bitmap;
+        }
+    
+
+
+
+    public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }
 
         public string DeviceName
         {
@@ -29,6 +50,16 @@ namespace HighBridge.ViewModel
             set
             {
                 _deviceName = value; 
+                OnpropertyChanged();
+            }
+        }
+
+        public string UserName
+        {
+            get { return _userName; }
+            set
+            {
+                _userName = value; 
                 OnpropertyChanged();
             }
         }
