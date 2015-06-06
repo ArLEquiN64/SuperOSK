@@ -7,19 +7,45 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="StartPage">
 
-    <Grid Background="Beige">
+    <Grid Background="{StaticResource TextBoxGray}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
+           
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Background="#80ff80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="FaceLife" TextAlignment="Justify" FontFamily="Microsoft Himalaya" FontWeight="Bold" FontStyle="Italic" FontSize="200"></TextBlock>
-        <Grid Grid.Row="0" Grid.Column="1" Background="#80ff80"></Grid>
-        <Button x:Name="SignUp" Content="Sign Up" Grid.Row ="1" Grid.Column="0" Width="500" Height="150" Click="SignUp_Click" FontSize="72" FontFamily="Impact"></Button>
-        <Button x:Name="SignIn" Content="Sign In" Grid.Row ="1" Grid.Column="1" Width="500" Height="150" Click="SignIn_Click" FontSize="72" FontFamily="Impact"></Button>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource OneNotePurple}">
+            <TextBlock Grid.Row="0" 
+                   Grid.Column="0" 
+                   Foreground="Snow"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Center"
+                   Text="FaceLife" 
+                   TextAlignment="Justify"
+                   FontFamily="Consolas"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   FontSize="100"
+                   ></TextBlock>
+        </Grid>
+        <Button x:Name="SignUp" Grid.Row ="1" Grid.Column="0" 
+                Width="500" Height="500" Click="SignUp_Click" FontSize="72" 
+                FontFamily="Consolas" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Grid>
+                <Ellipse Width="300" Height="300" Fill="{StaticResource TextBoxBorder}"></Ellipse>
+                <TextBlock Text="Sign Up" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+        </Button>
+        <Button x:Name="SignIn" Grid.Row ="1" Grid.Column="1" 
+                Width="500" Height="500" Click="SignIn_Click" FontSize="72" 
+                FontFamily="Consolas" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Grid>
+                <Ellipse Width="300" Height="300" Fill="{StaticResource TextBoxBorder}"></Ellipse>
+                <TextBlock Text="Sign In" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+        </Button>
     </Grid>
 </Page>
