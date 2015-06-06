@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Codeplex.Data;
 
 namespace test
 {
@@ -22,9 +23,7 @@ namespace test
             //データを送信し、また受信する
             byte[] resData = wc.UploadFile(url, filePath);
             //受信したデータを表示する
-            string resText = Encoding.UTF8.GetString(resData);
-            Console.WriteLine(resText);
-
+            var resText = DynamicJson.Parse(Encoding.UTF8.GetString(resData));
 
         }
     }
