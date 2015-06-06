@@ -8,36 +8,58 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="RegisterPage">
     <Grid>
-        <StackPanel>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
             <StackPanel.Resources>
                 <ObjectDataProvider x:Key="Devices" 
                                     ObjectType="Util:DeviceFilters" 
                                     MethodName="Get"/>
-                
+
             </StackPanel.Resources>
-            <Grid Margin="40,100,40,40">
-                <TextBlock HorizontalAlignment="Left" 
-                   VerticalAlignment="Stretch" 
+            <Grid Height="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" 
                    TextWrapping="Wrap" 
                    FontSize="40"
-                   Foreground="DarkGray"
-                   Text="Name" />
-                <TextBox x:Name="NameBox" 
+                   Foreground="{StaticResource DetailBoxBlack}"
+                   Text="Name" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           Margin="0,0,50,0" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                   TextWrapping="Wrap" 
+                   FontSize="40"
+                   Foreground="{StaticResource DetailBoxBlack}"
+                   Text="Camera" 
+                           Margin="0,0,50,0"/>
+                <!--<Label Content="Device"/>-->
+
+
+                <TextBox HorizontalAlignment="Left" 
+                         Grid.Column="1" Grid.Row="0" 
+                         x:Name="NameBox" 
                      Text="{Binding UserName}"
                      FontSize="40"
-                     HorizontalAlignment="Right"
                      Width="300" 
-                     Height="50" />
-                <!--<Label Content="Device"/>-->
-            </Grid>
-            <Grid Margin="40,0,40,40">
-                <TextBlock HorizontalAlignment="Left" 
-                   VerticalAlignment="Stretch" 
-                   TextWrapping="Wrap" 
-                   FontSize="40"
-                   Foreground="DarkGray"
-                   Text="Camera" />
-                <ComboBox HorizontalAlignment="Right"
+                     Height="50" Background="#33FFFFFF"/>
+                <ComboBox Grid.Column="1" Grid.Row="1" 
+                          HorizontalAlignment="Left"
                   Name="DeviceListCombo"
                   Width="300"
                   Height="50"
@@ -45,15 +67,36 @@
                   ItemsSource="{Binding Source ={StaticResource Devices}}"
                   SelectedValue="{Binding DeviceName}"
                   DisplayMemberPath="Name"
-                  SelectedValuePath="MonikerString"/>
+                  SelectedValuePath="MonikerString">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="#33E9E9E9" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
             </Grid>
-            <Button Width ="200" 
-                    Height="100"
-                    Margin="40"
-                    Content="Face me!" 
-                    FontSize="40"
-                    HorizontalAlignment="Center"
-                    Command="{Binding ConnectCommand}"/>
+
+            <Button
+                Margin="60"
+                x:Name="SignUp" 
+                    Width="210"
+                    Height="210"          
+                Command="{Binding ConnectCommand}"
+                FontSize="72" 
+                FontFamily="Consolas" 
+                BorderBrush="{x:Null}" 
+                Background="{x:Null}">
+                <Grid>
+                    <Ellipse Width="200" 
+                         Height="200" 
+                         Fill="{DynamicResource SelectedDetailBoxBlack}"></Ellipse>
+                    <TextBlock Text="Face Me!" 
+                          FontSize="40"
+                          TextAlignment="Center" 
+                          VerticalAlignment="Center" Foreground="LightGray"/>
+                </Grid>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

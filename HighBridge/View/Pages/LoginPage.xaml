@@ -12,9 +12,9 @@
 	Title="LoginPage" >
 
     <Grid>
-        <Grid.Background>
+        <!--<Grid.Background>
             <ImageBrush x:Name="BG" ImageSource="/HeightBridge;component/Assets/Background.jpg" Opacity="1"/>
-        </Grid.Background>
+        </Grid.Background>-->
         <StackPanel>
             <StackPanel.Resources>
                 <ObjectDataProvider x:Key="Devices" 

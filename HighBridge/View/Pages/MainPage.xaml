@@ -15,5 +15,8 @@
        <StackPanel>
            <Image ></Image>
        </StackPanel>
+       <StackPanel Grid.Column="1">
+           <TextBlock Background="White" Height="50" FontSize="40" Margin="20"></TextBlock>
+       </StackPanel>
    </Grid>
 </Page>
