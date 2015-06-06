@@ -7,9 +7,19 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="StartPage">
 
-    <Grid>
-        
-        <Button Width="150" Height="150" Margin="815,325,315,325" Click="Button_Click_1"></Button>
-        <Button Width="150" Height="150" Margin="321,323,809,327" Click="Button_Click"></Button>
+    <Grid Background="Beige">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="#80ff80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="FaceLife" TextAlignment="Justify" FontFamily="Microsoft Himalaya" FontWeight="Bold" FontStyle="Italic" FontSize="200"></TextBlock>
+        <Grid Grid.Row="0" Grid.Column="1" Background="#80ff80"></Grid>
+        <Button x:Name="SignUp" Content="Sign Up" Grid.Row ="1" Grid.Column="0" Width="500" Height="150" Click="SignUp_Click" FontSize="72" FontFamily="Impact"></Button>
+        <Button x:Name="SignIn" Content="Sign In" Grid.Row ="1" Grid.Column="1" Width="500" Height="150" Click="SignIn_Click" FontSize="72" FontFamily="Impact"></Button>
     </Grid>
 </Page>

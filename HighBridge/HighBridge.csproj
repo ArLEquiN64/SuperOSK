@@ -95,6 +95,7 @@
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegisterPageViewModel.cs" />
+    <Compile Include="ViewModel\StartPageViewModel.cs" />
     <Compile Include="View\Controls\CommentListControl.xaml.cs">
       <DependentUpon>CommentListControl.xaml</DependentUpon>
     </Compile>

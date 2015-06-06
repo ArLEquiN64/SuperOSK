@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HighBridge.ViewModel;
 
 namespace HighBridge.View.Pages
 {
@@ -23,15 +24,19 @@ namespace HighBridge.View.Pages
         public StartPage()
         {
             InitializeComponent();
+            DataContext = new StartPageViewModel();
+            MainWindow.Instance.ShowsNavigationUI = false;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SignUp_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.Instance.ShowsNavigationUI = true;
             NavigationService.Navigate(new RegisterPage());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.Instance.ShowsNavigationUI = true;
             NavigationService.Navigate(new LoginPage());
         }
     }
