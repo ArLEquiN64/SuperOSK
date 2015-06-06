@@ -13,9 +13,9 @@ namespace HighBridge.Model
             inputBitmap.Save(@"C:\Users\Onodera\Documents\SuperOSK\HighBridge\Assets\"+inputBitmap.ToString(), System.Drawing.Imaging.ImageFormat.Png);
             string filePath = @"C:\Users\Onodera\Documents\SuperOSK\HighBridge\Assets";
             //APIkey
-            String param = "?APIKEY=477730556650656f743635456e612e537148425a5470344e766678667735625543696d53366b4d774b462f&mode=register";
+			String param = "?apiKey=c334784652d3de937402417a8824880f&mode=register";
             //送信先のURL
-            string url = "https://api.apigw.smt.docomo.ne.jp/puxImageRecognition/v1/faceRecognition" + param;
+            string url = "http://eval.api.polestars.jp:8080/webqpi/face.do" + param;
 
             WebClient wc = new WebClient();
             wc.Headers.Add("Content-Type", "application/octet-stream");
