@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using HighBridge.Model;
 
 namespace HighBridge.View.UserControls
 {
@@ -10,9 +11,6 @@ namespace HighBridge.View.UserControls
     /// </summary>
     public partial class CamDeviceOperationControl : UserControl
     {
-        public event NewFrameEventHandler NewFrameGot = delegate { };
-        private VideoCaptureDevice _device;
-
         public CamDeviceOperationControl()
         {
             InitializeComponent();
@@ -20,16 +18,12 @@ namespace HighBridge.View.UserControls
 
         private void Connect_Click(object sender, RoutedEventArgs e)
         {
-            _device = new VideoCaptureDevice((string)DeviceListCombo.SelectedValue);
-            _device.NewFrame += NewFrameGot;
-            _device.Start();
+            VideoCaptureDeviceManager.Connect((string)DeviceListCombo.SelectedValue);
         }
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
         {
-            _device.NewFrame -= NewFrameGot;
-            _device.SignalToStop();
-            _device = null;
+           VideoCaptureDeviceManager.DisConnect();
         }
     }
 }

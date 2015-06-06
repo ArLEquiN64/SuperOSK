@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />
+    <Compile Include="Model\VideoCaptureDeviceManager.cs" />
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegisterPageViewModel.cs" />
@@ -147,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

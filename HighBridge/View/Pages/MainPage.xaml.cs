@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using AForge.Video;
 using HighBridge.Common.Util;
+using HighBridge.Model;
 using HighBridge.ViewModel;
 
 namespace HighBridge.View.Pages
@@ -14,15 +15,15 @@ namespace HighBridge.View.Pages
         public MainPage()
         {
             InitializeComponent();
-            CamDeviceCtrl.NewFrameGot += CamDeviceCtrlNewFrameGot;
+            VideoCaptureDeviceManager.NewFrameGot += CamDeviceCtrlNewFrameGot;
+            DataContext=ViewModel=new MainPageViewModel();
+            
         }
         private void CamDeviceCtrlNewFrameGot(object sender, NewFrameEventArgs eventArgs)
         {
             ViewModel.ImageSource = eventArgs.Frame;
             Picture.Dispatcher.Invoke(() =>
-            {
-                Picture.Source = BitmapToBitmapFrame.Convert(eventArgs.Frame);
-            });
+            { if (Picture != null) Picture.Source = BitmapToBitmapFrame.Convert(eventArgs.Frame); });
         }
     }
 }
