@@ -29,7 +29,7 @@ namespace HighBridge.ViewModel
             if (UserName == null) return;
             VideoCaptureDeviceManager.Connect(DeviceName);
             var data = await GetBitMapAsync();
-            var newUser = new UserData(/*FaceDate.GetFaceDate(data)*/ "this_is_ID", UserName);
+            var newUser = new UserData(FaceDate.GetFaceDate(data), UserName);
             AccountManager.AddUser(newUser);
 
         }
