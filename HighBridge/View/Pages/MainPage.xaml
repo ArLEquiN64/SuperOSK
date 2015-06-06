@@ -9,19 +9,17 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="MainPage">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <userControls:CamDeviceOperationControl 
+        <StackPanel HorizontalAlignment="Center">
+            <userControls:CamDeviceOperationControl
+                Height="800"
+                Width="1000"
                 x:Name="CamDeviceCtrl" 
-                HorizontalAlignment="Left" 
-                Margin="10,10,0,0" 
-                VerticalAlignment="Top" 
-                Width="388"/>
-            <Image x:Name="Picture" 
+                VerticalAlignment="Top"/>
+            <!--<Image x:Name="Picture" 
                    HorizontalAlignment="Left" 
                    Height="246" 
-                   Margin="10,0,0,0" 
                    VerticalAlignment="Top" 
-                   Width="388"/>
+                   Width="388"/>-->
         </StackPanel>
     </Grid>
 </Page>

@@ -15,15 +15,15 @@ namespace HighBridge.View.Pages
         public MainPage()
         {
             InitializeComponent();
-            VideoCaptureDeviceManager.NewFrameGot += CamDeviceCtrlNewFrameGot;
+            //VideoCaptureDeviceManager.NewFrameGot += CamDeviceCtrlNewFrameGot;
             DataContext=ViewModel=new MainPageViewModel();
             
         }
-        private void CamDeviceCtrlNewFrameGot(object sender, NewFrameEventArgs eventArgs)
-        {
-            ViewModel.ImageSource = eventArgs.Frame;
-            Picture.Dispatcher.Invoke(() =>
-            { if (Picture != null) Picture.Source = BitmapToBitmapFrame.Convert(eventArgs.Frame); });
-        }
+        //private void CamDeviceCtrlNewFrameGot(object sender, NewFrameEventArgs eventArgs)
+        //{
+        //    ViewModel.ImageSource = eventArgs.Frame;
+        //    Picture.Dispatcher.Invoke(() =>
+        //    { if (Picture != null) Picture.Source = BitmapToBitmapFrame.Convert(eventArgs.Frame); });
+        //}
     }
 }
