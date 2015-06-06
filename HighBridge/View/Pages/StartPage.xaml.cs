@@ -27,12 +27,12 @@ namespace HighBridge.View.Pages
             DataContext = new StartPageViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegisterPage());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void SignIn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LoginPage());
         }

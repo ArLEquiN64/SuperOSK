@@ -8,8 +8,22 @@
 	Title="StartPage">
 
     <Grid>
-        
-        <Button Width="150" Height="150" Margin="815,325,315,325" Click="Button_Click_1"></Button>
-        <Button Width="150" Height="150" Margin="321,323,809,327" Click="Button_Click"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Button x:Name="SignUp"  Grid.Row ="1" Grid.Column="0" Width="150" Height="150" Click="SignUp_Click"></Button>
+        <Button x:Name="SignIn" Grid.Row ="1" Grid.Column="1" Width="150" Height="150" Click="SignIn_Click"></Button>
     </Grid>
 </Page>
