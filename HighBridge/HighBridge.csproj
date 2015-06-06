@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />
+    <Compile Include="Model\DocomoAPI\FaceDate.cs" />
     <Compile Include="View\CamDeviceOperationControl.xaml.cs">
       <DependentUpon>CamDeviceOperationControl.xaml</DependentUpon>
     </Compile>
@@ -137,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

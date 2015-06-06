@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighBridge", "HighBridge.csproj", "{DA011A34-F835-4622-B779-D2B9B16985F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "..\test\test.csproj", "{1A32AAC6-6973-4CDD-B6C2-C3EE25958098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DA011A34-F835-4622-B779-D2B9B16985F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA011A34-F835-4622-B779-D2B9B16985F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA011A34-F835-4622-B779-D2B9B16985F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A32AAC6-6973-4CDD-B6C2-C3EE25958098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A32AAC6-6973-4CDD-B6C2-C3EE25958098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A32AAC6-6973-4CDD-B6C2-C3EE25958098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A32AAC6-6973-4CDD-B6C2-C3EE25958098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
