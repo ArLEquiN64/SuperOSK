@@ -25,15 +25,18 @@ namespace HighBridge.View.Pages
         {
             InitializeComponent();
             DataContext = new StartPageViewModel();
+            MainWindow.Instance.ShowsNavigationUI = false;
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.Instance.ShowsNavigationUI = true;
             NavigationService.Navigate(new RegisterPage());
         }
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.Instance.ShowsNavigationUI = true;
             NavigationService.Navigate(new LoginPage());
         }
     }

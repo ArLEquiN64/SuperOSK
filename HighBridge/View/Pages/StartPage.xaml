@@ -17,14 +17,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" Background="#80ff80">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-        </Grid>
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="#80ff80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="FaceLife" TextAlignment="Justify" FontFamily="Microsoft Himalaya" FontWeight="Bold" FontStyle="Italic" FontSize="200"></TextBlock>
         <Grid Grid.Row="0" Grid.Column="1" Background="#80ff80"></Grid>
-        <Button x:Name="SignUp" Grid.Row ="1" Grid.Column="0" Width="150" Height="150" Click="SignUp_Click"></Button>
-        <Button x:Name="SignIn" Grid.Row ="1" Grid.Column="1" Width="150" Height="150" Click="SignIn_Click"></Button>
+        <Button x:Name="SignUp" Content="Sign Up" Grid.Row ="1" Grid.Column="0" Width="500" Height="150" Click="SignUp_Click" FontSize="72" FontFamily="Impact"></Button>
+        <Button x:Name="SignIn" Content="Sign In" Grid.Row ="1" Grid.Column="1" Width="500" Height="150" Click="SignIn_Click" FontSize="72" FontFamily="Impact"></Button>
     </Grid>
 </Page>
