@@ -10,7 +10,10 @@
     <Grid>
         <StackPanel>
             <StackPanel.Resources>
-                <ObjectDataProvider x:Key="Devices" ObjectType="Util:DeviceFilters" MethodName="Get"/>
+                <ObjectDataProvider x:Key="Devices" 
+                                    ObjectType="Util:DeviceFilters" 
+                                    MethodName="Get"/>
+                
             </StackPanel.Resources>
             <Grid Margin="40,100,40,40">
                 <TextBlock HorizontalAlignment="Left" 
@@ -33,9 +36,8 @@
                    FontSize="40"
                    Foreground="DarkGray"
                    Text="Camera" />
-                <ComboBox 
-                HorizontalAlignment="Right"
-                Name="DeviceListCombo"
+                <ComboBox HorizontalAlignment="Right"
+                  Name="DeviceListCombo"
                   Width="300"
                   Height="50"
                   FontSize="20"
