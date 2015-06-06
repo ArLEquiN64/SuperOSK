@@ -22,11 +22,13 @@ namespace HighBridge.View.Pages
             DataContext = new LoginPageViewModel();
         }
 
-        private void FaceMe_Click(object sender, System.Windows.RoutedEventArgs e)
+       /*
+        * private void FaceMe_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             FaceMe.Visibility = Visibility.Collapsed;
             Loading.Visibility = Visibility.Visible;
-        }
+        } 
+        */
         private void WindowsFormsHost_Loaded(object sender, RoutedEventArgs e)
         {
             WindowsFormsHost host = (WindowsFormsHost)sender;
