@@ -16,17 +16,17 @@
         
             <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
             <Image Source="{Binding Image}"></Image>
             <TextBlock Grid.Row="0" 
                        Grid.Column="1"
-                       FontSize="20"
+                       FontSize="40"
                        Text="{Binding Name}">
                 </TextBlock>
                 <TextBlock Width="600" 

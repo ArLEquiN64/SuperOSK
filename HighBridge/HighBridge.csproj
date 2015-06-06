@@ -70,6 +70,9 @@
     <Compile Include="ViewModel\LoginPageViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegisterPageViewModel.cs" />
+    <Compile Include="View\Controls\CommentListControl.xaml.cs">
+      <DependentUpon>CommentListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Controls\CommentUnit.xaml.cs">
       <DependentUpon>CommentUnit.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     <Compile Include="View\Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\Controls\CommentListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Controls\CommentUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

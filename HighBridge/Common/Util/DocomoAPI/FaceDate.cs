@@ -10,8 +10,8 @@ namespace HighBridge.Common.Util.DocomoAPI
         //bitmapイメージからFaceDateを解析してstring型のjsonを返すメソッド
         public string GetFaceDate(Bitmap inputBitmap)
         {
-            //送信するファイルのパス
-            string filePath = @"C:\Users\Onodera\Pictures\Camera Roll\WIN_20150606_191014.JPG";
+            inputBitmap.Save(@"C:\Users\Onodera\Documents\SuperOSK\HighBridge\Assets\"+inputBitmap.ToString(), System.Drawing.Imaging.ImageFormat.Png);
+            string filePath = @"C:\Users\Onodera\Documents\SuperOSK\HighBridge\Assets";
             //APIkey
             String param = "?APIKEY=477730556650656f743635456e612e537148425a5470344e766678667735625543696d53366b4d774b462f&mode=register";
             //送信先のURL
