@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using AForge.Video;
 using HighBridge.Common.Util;
 
-namespace HighBridge.View
+namespace HighBridge.View.Pages
 {
     /// <summary>
     /// MainPage.xaml の相互作用ロジック
