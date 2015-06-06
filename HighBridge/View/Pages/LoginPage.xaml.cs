@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using HighBridge.ViewModel;
 
 namespace HighBridge.View.Pages
 {
@@ -10,6 +11,7 @@ namespace HighBridge.View.Pages
         public LoginPage()
         {
             InitializeComponent();
+            DataContext = new LoginPageViewModel();
         }
     }
 }

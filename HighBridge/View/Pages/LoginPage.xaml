@@ -3,17 +3,57 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:util="clr-namespace:HighBridge.Common.Util"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="800" d:DesignWidth="1280"
 	Title="LoginPage" Background="White">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel.Resources>
+                <ObjectDataProvider x:Key="Devices" 
+                                    ObjectType="util:DeviceFilters" 
+                                    MethodName="Get"/>
+
+            </StackPanel.Resources>
+            <Grid Margin="40,100,40,40">
+                <TextBlock HorizontalAlignment="Left" 
+                   VerticalAlignment="Stretch" 
+                   TextWrapping="Wrap" 
+                   FontSize="40"
+                   Foreground="DarkGray"
+                   Text="Name" />
+                <TextBox x:Name="NameBox" 
+                     FontSize="40"
+                     HorizontalAlignment="Right"
+                     Width="300" 
+                     Height="50" />
+                <!--<Label Content="Device"/>-->
+            </Grid>
+            <Grid Margin="40,0,40,40">
+                <TextBlock HorizontalAlignment="Left" 
+                   VerticalAlignment="Stretch" 
+                   TextWrapping="Wrap" 
+                   FontSize="40"
+                   Foreground="DarkGray"
+                   Text="Camera" />
+                <ComboBox HorizontalAlignment="Right"
+                  Name="DeviceListCombo"
+                  Width="300"
+                  Height="50"
+                  FontSize="20"
+                  ItemsSource="{Binding Source ={StaticResource Devices}}"
+                  SelectedValue="{Binding DeviceName}"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="MonikerString"/>
+            </Grid>
+            <Button Width ="200" 
+                    Height="100"
+                    Margin="40"
+                    Content="Face me!" 
+                    FontSize="40"
+                    HorizontalAlignment="Center"
+                    Command="{Binding ConnectCommand}"/>
+        </StackPanel>
     </Grid>
 </Page>
