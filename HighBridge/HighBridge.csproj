@@ -46,7 +46,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,19 +65,29 @@
     </ApplicationDefinition>
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />
-    <Compile Include="DynamicJson.cs" />
-    <Compile Include="Common\Util\DocomoAPI\FaceDate.cs" />
-    <Compile Include="View\CamDeviceOperationControl.xaml.cs">
-      <DependentUpon>CamDeviceOperationControl.xaml</DependentUpon>
+    <Compile Include="Model\VideoCaptureDeviceManager.cs" />
+    <Compile Include="ViewModel\CommentUnitViewModel.cs" />
+    <Compile Include="ViewModel\LoginPageViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\RegisterPageViewModel.cs" />
+    <Compile Include="View\Controls\CommentUnit.xaml.cs">
+      <DependentUpon>CommentUnit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RegisterPage.xaml.cs">
+    <Compile Include="View\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\CamDeviceOperationControl.xaml">
+    <Page Include="View\Controls\CommentUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPage.xaml">
+    <Page Include="View\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,14 +107,14 @@
     <Compile Include="Common\Converter\EnumToStingConverter.cs" />
     <Compile Include="Common\Util\TimeManager.cs" />
     <Compile Include="Common\Util\ViewModelBase.cs" />
-    <Compile Include="View\MainPage.xaml.cs">
+    <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\RegisterPage.xaml">
+    <Page Include="View\Pages\RegisterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +137,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,8 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\" />
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

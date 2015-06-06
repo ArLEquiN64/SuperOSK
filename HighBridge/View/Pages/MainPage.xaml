@@ -9,11 +9,7 @@
 	Title="MainPage">
     <Grid>
         <StackPanel HorizontalAlignment="Center">
-            <!--<Image x:Name="Picture" 
-                   HorizontalAlignment="Left" 
-                   Height="246" 
-                   VerticalAlignment="Top" 
-                   Width="388"/>-->
+           
         </StackPanel>
     </Grid>
 </Page>
