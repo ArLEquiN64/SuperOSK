@@ -40,14 +40,14 @@
                            HorizontalAlignment="Right"
                            Margin="0,0,50,0" />
 
-                <TextBlock Grid.Row="1" Grid.Column="0" 
+                <!--<TextBlock Grid.Row="1" Grid.Column="0" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Right"
                    TextWrapping="Wrap" 
                    FontSize="40"
                    Foreground="{StaticResource DetailBoxBlack}"
                    Text="Camera" 
-                           Margin="0,0,50,0"/>
+                           Margin="0,0,50,0"/>-->
                 <!--<Label Content="Device"/>-->
 
 
@@ -58,7 +58,7 @@
                      FontSize="40"
                      Width="300" 
                      Height="50" Background="#33FFFFFF"/>
-                <ComboBox Grid.Column="1" Grid.Row="1" 
+                <!--<ComboBox Grid.Column="1" Grid.Row="1" 
                           HorizontalAlignment="Left"
                   Name="DeviceListCombo"
                   Width="300"
@@ -74,7 +74,7 @@
                             <GradientStop Color="#33E9E9E9" Offset="1"/>
                         </LinearGradientBrush>
                     </ComboBox.Background>
-                </ComboBox>
+                </ComboBox>-->
             </Grid>
 
             <Button

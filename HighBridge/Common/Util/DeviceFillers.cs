@@ -14,5 +14,6 @@ namespace HighBridge.Common.Util
             return from FilterInfo info in new FilterInfoCollection(FilterCategory.VideoInputDevice)
                    select new DeviceFilters { Name = info.Name, MonikerString = info.MonikerString };
         }
+
     }
 }

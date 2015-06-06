@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AForge.Video.DirectShow;
+using HighBridge.Model;
 using HighBridge.ViewModel;
 
 namespace HighBridge.View.Pages
@@ -25,6 +27,9 @@ namespace HighBridge.View.Pages
         {
             InitializeComponent();
             DataContext = new StartPageViewModel();
+            FilterInfoCollection infocolection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            if(infocolection.Count==0)return;
+            VideoCaptureDeviceManager.Connect(infocolection[0].MonikerString);
         }
 
         private void SignUp_Click(object sender, RoutedEventArgs e)

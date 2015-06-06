@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using HighBridge.Common.Commands;
 using HighBridge.Common.Util;
@@ -15,29 +16,23 @@ namespace HighBridge.ViewModel
     {
         private string _deviceName;
         private string _userName;
+        private Timer _timer;
 
         public RegisterPageViewModel()
         {
             ConnectCommand = new AlwaysExecutableDelegateCommand(o =>
             {
-                AddUser();
+               AddUser();
             });
         }
 
         private async void AddUser()
         {
             if (UserName == null) return;
-            VideoCaptureDeviceManager.Connect(DeviceName);
-            var data = await GetBitMapAsync();
-            var newUser = new UserData(FaceDate.GetFaceDate(data), UserName);
+            var newUser = new UserData(FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap), UserName);
             AccountManager.AddUser(newUser);
-
         }
 
-        private async Task<Bitmap> GetBitMapAsync()
-        {
-            return VideoCaptureDeviceManager.Bitmap;
-        }
 
 
     public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }

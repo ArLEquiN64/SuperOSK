@@ -19,9 +19,9 @@ namespace HighBridge.Model
         {
             if(deviceName==null)return;
             Device = new VideoCaptureDevice(deviceName);
-            Device.NewFrame += NewFrameGot;
             Device.Start();
             NewFrameGot += CamDeviceCtrlNewFrameGot;
+            Device.NewFrame += NewFrameGot;
         }
 
         private static void CamDeviceCtrlNewFrameGot(object sender, NewFrameEventArgs eventArgs)

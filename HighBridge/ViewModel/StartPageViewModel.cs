@@ -9,5 +9,6 @@ namespace HighBridge.ViewModel
 {
     class StartPageViewModel : ViewModelBase
     {
+       
     }
 }
