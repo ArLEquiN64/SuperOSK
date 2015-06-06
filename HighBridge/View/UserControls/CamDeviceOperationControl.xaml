@@ -10,15 +10,15 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
         <StackPanel.Resources>
-            <ObjectDataProvider x:Key="devices" ObjectType="Util:DeviceFilters" MethodName="Get"/>
+            <ObjectDataProvider x:Key="Devices" ObjectType="Util:DeviceFilters" MethodName="Get"/>
         </StackPanel.Resources>
         <Label Content="Device"/>
-        <ComboBox Name="deviceListCombo"
-                  ItemsSource="{Binding Source ={StaticResource devices}}"
+        <ComboBox Name="DeviceListCombo"
+                  ItemsSource="{Binding Source ={StaticResource Devices}}"
                   DisplayMemberPath="Name"
                   SelectedValuePath="MonikerString"/>
         <StackPanel Height="28" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Label Name="statusLabel">status</Label>
+            <Label Name="StatusLabel">status</Label>
             <Button Width ="80" Content="Connect" Click="Connect_Click"/>
             <Button Width ="80" Content="Disconnect" Click="Disconnect_Click"/>
         </StackPanel>

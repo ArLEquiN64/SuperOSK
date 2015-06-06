@@ -11,7 +11,7 @@ namespace HighBridge.View.UserControls
     public partial class CamDeviceOperationControl : UserControl
     {
         public event NewFrameEventHandler NewFrameGot = delegate { };
-        private VideoCaptureDevice device;
+        private VideoCaptureDevice _device;
 
         public CamDeviceOperationControl()
         {
@@ -20,16 +20,16 @@ namespace HighBridge.View.UserControls
 
         private void Connect_Click(object sender, RoutedEventArgs e)
         {
-            device = new VideoCaptureDevice((string)deviceListCombo.SelectedValue);
-            device.NewFrame += NewFrameGot;
-            device.Start();
+            _device = new VideoCaptureDevice((string)DeviceListCombo.SelectedValue);
+            _device.NewFrame += NewFrameGot;
+            _device.Start();
         }
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
         {
-            device.NewFrame -= NewFrameGot;
-            device.SignalToStop();
-            device = null;
+            _device.NewFrame -= NewFrameGot;
+            _device.SignalToStop();
+            _device = null;
         }
     }
 }

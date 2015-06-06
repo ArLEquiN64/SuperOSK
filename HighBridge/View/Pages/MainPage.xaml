@@ -10,8 +10,18 @@
 	Title="MainPage">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <userControls:CamDeviceOperationControl x:Name="camDeviceCtrl" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="388"/>
-            <Image x:Name="picture" HorizontalAlignment="Left" Height="246" Margin="10,0,0,0" VerticalAlignment="Top" Width="388"/>
+            <userControls:CamDeviceOperationControl 
+                x:Name="CamDeviceCtrl" 
+                HorizontalAlignment="Left" 
+                Margin="10,10,0,0" 
+                VerticalAlignment="Top" 
+                Width="388"/>
+            <Image x:Name="Picture" 
+                   HorizontalAlignment="Left" 
+                   Height="246" 
+                   Margin="10,0,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="388"/>
         </StackPanel>
     </Grid>
 </Page>
