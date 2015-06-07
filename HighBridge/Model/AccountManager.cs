@@ -57,10 +57,46 @@ namespace HighBridge.Model
             sr.Close();
         }
 
-        public static UserData[] Serch(Bitmap userdata)
-        {
-            throw new NotImplementedException();
-        }
+		public static UserData GetUserInfo(string faceid)
+		{
+			//文字コードを指定する
+			System.Text.Encoding enc = System.Text.Encoding.GetEncoding("shift_jis");
+
+			//POST送信する文字列を作成
+			string postData =
+				"id=" + MyData.FaceId + "&" +
+				"sessionId=" + _sessionId;
+
+			//バイト型配列に変換
+			byte[] postDataBytes = System.Text.Encoding.ASCII.GetBytes(postData);
+
+			//WebRequestの作成
+			System.Net.WebRequest req =
+				System.Net.WebRequest.Create("http://VirtualOSK.cloudapp.net/users/:" + faceid);
+			//メソッドにPOSTを指定
+			req.Method = "GET";
+			//ContentTypeを"application/x-www-form-urlencoded"にする
+			req.ContentType = "application/x-www-form-urlencoded";
+			//POST送信するデータの長さを指定
+			req.ContentLength = postDataBytes.Length;
+
+			//データをPOST送信するためのStreamを取得
+			System.IO.Stream reqStream = req.GetRequestStream();
+			//送信するデータを書き込む
+			reqStream.Write(postDataBytes, 0, postDataBytes.Length);
+			reqStream.Close();
+
+			//サーバーからの応答を受信するためのWebResponseを取得
+			System.Net.WebResponse res = req.GetResponse();
+			//応答データを受信するためのStreamを取得
+			System.IO.Stream resStream = res.GetResponseStream();
+			//受信して表示
+			System.IO.StreamReader sr = new System.IO.StreamReader(resStream, enc);
+			var str = sr.ReadToEnd();
+			//閉じる
+			sr.Close();
+			return MyData;
+		}
 
         public static UserData Identify(Bitmap bitmap)
         {
