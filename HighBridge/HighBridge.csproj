@@ -84,6 +84,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\Util\DynamicJson.cs" />
     <Compile Include="Model\AccountManager.cs" />
     <Compile Include="Common\Util\BitmapToBitmapFrame.cs" />
     <Compile Include="Common\Util\DeviceFillers.cs" />

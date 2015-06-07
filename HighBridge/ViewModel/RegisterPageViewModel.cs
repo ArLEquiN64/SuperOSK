@@ -15,35 +15,38 @@ namespace HighBridge.ViewModel
     internal class RegisterPageViewModel : ViewModelBase
     {
         private string _deviceName;
-        private string _userName="";
+        private string _userName = "";
 
         public RegisterPageViewModel()
         {
             ConnectCommand = new AlwaysExecutableDelegateCommand(o =>
             {
-               AddUser();
+                AddUser();
             });
         }
 
         private void AddUser()
         {
             if (UserName == null) return;
-            //var newUser = new UserData(FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap), UserName);
-            //newUser.name = UserName;
-            //newUser.image
-            //AccountManager.AddUser(newUser);
+            var newUser = new UserData();
+
+            var res = FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap);
+            newUser.faceId = res[0];
+            newUser.image = res[1];
+            newUser.name = UserName;
+            AccountManager.AddUser(newUser);
         }
 
 
 
-    public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }
+        public AlwaysExecutableDelegateCommand ConnectCommand { get; set; }
 
         public string DeviceName
         {
             get { return _deviceName; }
             set
             {
-                _deviceName = value; 
+                _deviceName = value;
                 OnpropertyChanged();
             }
         }
@@ -56,7 +59,7 @@ namespace HighBridge.ViewModel
             }
             set
             {
-                _userName = value; 
+                _userName = value;
                 OnpropertyChanged();
             }
         }
