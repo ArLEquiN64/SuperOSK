@@ -5,8 +5,16 @@ using HighBridge.Common.Util;
 
 namespace HighBridge.Model
 {
-    class AccountManager
+    static class AccountManager
     {
+        static AccountManager()
+        {
+            MyData=new UserData("","wang");
+        }
+        public static UserData MyData { get; set; }
+
+        private static string _sessionId;
+
         public static void AddUser(UserData userdata)
         {
             //文字コードを指定する
@@ -15,10 +23,10 @@ namespace HighBridge.Model
 
             //POST送信する文字列を作成
             string postData =
-                "id=" + userdata.ID + "&"
-                +"name="+userdata.name+"&"
-                +"mail=azelf.trickroom@gmail.com";
-                  
+                "id=" + userdata.FaceId + "&"
+                + "name=" + userdata.Name + "&"
+                + "mail=azelf.trickroom@gmail.com";
+
             //バイト型配列に変換
             byte[] postDataBytes = System.Text.Encoding.ASCII.GetBytes(postData);
 
@@ -50,6 +58,11 @@ namespace HighBridge.Model
         }
 
         public static UserData[] Serch(Bitmap userdata)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static UserData Identify(Bitmap bitmap)
         {
             throw new NotImplementedException();
         }
