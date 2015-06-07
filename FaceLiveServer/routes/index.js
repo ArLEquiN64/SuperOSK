@@ -3,10 +3,28 @@ var router = express.Router();
 var redis = require('redis');
 client = redis.createClient();
 var sleep = require('sleep-async')();
+var Bcrypt = require("bcrypt");
+
+//var MKEY = process.env.FACE_LIVE_MASTER;
+
+var checkHash = (function() {
+  function checkHash(key){
+    this.pass = key;
+  }
+  checkHash.prototype.compare = function(pass){
+    var result = Bcrypt.compareSync(MKEY+pass);
+    return result;
+  }
+  checkHash.prototype.getToken = function(pass){
+    var salt = Bcrypt.genSaltSync(10);
+    var gToken = Bcrypt.hashSync(MKEY+pass, salt);
+    return gToken;
+  }
+})();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Facelife' });
 });
 
 router.get('/login', function(req, res){
