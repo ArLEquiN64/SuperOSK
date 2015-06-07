@@ -30,7 +30,7 @@
                     FontSize="40" Margin="20" FontFamily="Consolas"
                     VerticalAlignment="Top"></TextBox>
            <Button Grid.Column="2" Height="50" VerticalAlignment="Top" Width="100" Margin="20" Click="Reference_Click">
-               <TextBlock Text="reference" FontSize="14"></TextBlock>
+            <TextBlock Text="reference" FontSize="14" FontFamily="Consolas"></TextBlock>
            </Button>
       
    </Grid>
