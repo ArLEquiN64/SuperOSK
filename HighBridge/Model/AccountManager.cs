@@ -17,7 +17,7 @@ namespace HighBridge.Model
 
        static AccountManager()
         {
-
+           MyData=new UserData();
         }
 
         public static UserData MyData { get; set; }

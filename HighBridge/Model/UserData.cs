@@ -12,6 +12,16 @@ namespace HighBridge.Model
 	[DataContract]
     class UserData
     {
+	    public UserData()
+	    {
+	        faceId = "";
+	        name = "";
+	        mail = "";
+	        tell = "";
+	        twitter = "";
+	        comment = "";
+	        image = "";
+	    }
 		[DataMember]
 		public string faceId { get; set; }
 		[DataMember]

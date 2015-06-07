@@ -44,11 +44,11 @@
                 </TextBlock>
                 <TextBlock Text="comment" Foreground="White"></TextBlock>
 
-                <TextBlock Text="{Binding Comment}"
+                <TextBox Text="{Binding Comment}"
                             FontSize="30"
                             Height="200"
                             Foreground="White"
-                            Background="#33FFFFFF"></TextBlock>
+                            Background="#33FFFFFF"></TextBox>
             </StackPanel>
         </Grid>
 
@@ -59,7 +59,7 @@
                    Height="50" 
                    VerticalAlignment="Top" 
                    Width="100" 
-                   Margin="30" 
+                   Margin="0,30,0,0" 
                    Click="Reference_Click">
             <TextBlock Text="reference" 
                        FontSize="14" 
