@@ -8,20 +8,16 @@
       xmlns:winForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
-      Background="White"
 	Title="LoginPage" >
 
-    <Grid>
-       
-            <Grid x:Name ="Loading"
+    <Grid x:Name ="Loading"
                   Visibility="Visible"
                   Margin="0,80,0,0"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center">
-                <wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
-                    <winForms:PictureBox />
-                </wfi:WindowsFormsHost>
-            </Grid>
-      
+        <wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
+            <winForms:PictureBox/>
+        </wfi:WindowsFormsHost>
     </Grid>
+
 </Page>
