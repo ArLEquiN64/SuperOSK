@@ -10,7 +10,7 @@ router.post('/', function(req, res, next) {
     if(err){throw err;}
     else if(!reply){
       var json = {
-        id: req.body.faceId,
+        faceId: req.body.faceId,
         name: req.body.name,
         mail: req.body.mail,
         tell: req.body.tell,

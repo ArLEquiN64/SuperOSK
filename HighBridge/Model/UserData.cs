@@ -17,11 +17,15 @@ namespace HighBridge.Model
 		[DataMember]
 		public string name { get; set; }
 		[DataMember]
-		public string twitterId { get; set; }
+		public string mail { get; set; }
+		[DataMember]
+		public string tell { get; set; }
+		[DataMember]
+		public string twitter { get; set; }
 		[DataMember]
 		public string comment { get; set; }
 		[DataMember]
-        public string bitmap { get; set; }
+        public string image { get; set; }
 
     }
 }

@@ -2,15 +2,24 @@
 using System.Drawing;
 using System.Net;
 using HighBridge.Common.Util;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace HighBridge.Model
 {
     static class AccountManager
     {
+		public 
         static AccountManager()
         {
-            MyData=new UserData("","wang");
+
         }
+
         public static UserData MyData { get; set; }
 
         private static string _sessionId;
@@ -23,8 +32,8 @@ namespace HighBridge.Model
 
             //POST送信する文字列を作成
             string postData =
-                "id=" + userdata.FaceId + "&"
-                + "name=" + userdata.Name + "&"
+                "id=" + userdata.faceId + "&"
+                + "name=" + userdata.name + "&"
                 + "mail=azelf.trickroom@gmail.com";
 
             //バイト型配列に変換
@@ -52,9 +61,13 @@ namespace HighBridge.Model
             System.IO.Stream resStream = res.GetResponseStream();
             //受信して表示
             System.IO.StreamReader sr = new System.IO.StreamReader(resStream, enc);
-            Console.WriteLine(sr.ReadToEnd());
+            var str = sr.ReadToEnd();
             //閉じる
-            sr.Close();
+			sr.Close();
+
+			var serializer = new DataContractJsonSerializer(typeof(UserData));
+			var ms = new MemoryStream(Encoding.UTF8.GetBytes(str));
+			MyData = (UserData)serializer.ReadObject(ms);
         }
 
 		public static void logIn()
@@ -64,7 +77,7 @@ namespace HighBridge.Model
 
 			//POST送信する文字列を作成
 			string postData =
-				"id=" + MyData.FaceId;
+				"id=" + MyData.faceId;
 
 			//バイト型配列に変換
 			byte[] postDataBytes = System.Text.Encoding.ASCII.GetBytes(postData);
@@ -104,7 +117,7 @@ namespace HighBridge.Model
 
 			//POST送信する文字列を作成
 			string postData =
-				"id=" + MyData.FaceId + "&" +
+				"id=" + MyData.faceId + "&" +
 				"sessionId=" + _sessionId;
 
 			//バイト型配列に変換
@@ -135,7 +148,10 @@ namespace HighBridge.Model
 			var str = sr.ReadToEnd();
 			//閉じる
 			sr.Close();
-			return MyData;
+
+			var serializer = new DataContractJsonSerializer(typeof(UserData));
+			var ms = new MemoryStream(Encoding.UTF8.GetBytes(str));
+			return (UserData)serializer.ReadObject(ms);
 		}
 
         public static UserData Identify(Bitmap bitmap)
