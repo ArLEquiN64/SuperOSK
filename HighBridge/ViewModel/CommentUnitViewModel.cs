@@ -14,10 +14,17 @@ namespace HighBridge.ViewModel
         {
             
         }
+        public CommentUnitViewModel(BitmapFrame img,string name,string comment)
+        {
+            Image = img;
+            Name = name;
+            Comment = comment;
+        }
         public BitmapFrame Image { get; set; }
         public string Name { get; set; }
         public string Comment { get; set; }
     }
+
 
     class CommentUnitViewModelIndesign:CommentUnitViewModel
     {

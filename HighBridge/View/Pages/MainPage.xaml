@@ -4,19 +4,18 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:view="clr-namespace:HighBridge.View"
+      xmlns:control="clr-namespace:HighBridge.View.Controls"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="MainPage">
     <Page.Resources>
-       
     </Page.Resources>
-   <Grid>
-       <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="400"></ColumnDefinition>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
         <Grid Background="{StaticResource DetailBoxBlack}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
@@ -34,7 +33,6 @@
                        Height="300" 
                        Margin="0,0,0,50" 
                        Source="{Binding ImageSource}"></Image>
-
                 <TextBlock Text="twitter" 
                            Foreground="White"></TextBlock>
                 <TextBlock Text="{Binding TwitterId}" 
@@ -43,7 +41,6 @@
                            Foreground="White">
                 </TextBlock>
                 <TextBlock Text="comment" Foreground="White"></TextBlock>
-
                 <TextBox Text="{Binding Comment}"
                             FontSize="30"
                             Height="200"
@@ -51,11 +48,13 @@
                             Background="#33FFFFFF"></TextBox>
             </StackPanel>
         </Grid>
-
-        <TextBox x:Name="TextBox" Grid.Column="1" Background="White" Height="50" 
+        <Grid Grid.Column="1" Grid.ColumnSpan="2" Margin="0,120,0,0">
+            <control:CommentListControl DataContext="{Binding ControlData}"></control:CommentListControl>
+        </Grid>
+            <TextBox x:Name="TextBox" Grid.Column="1" Background="White" Height="50" 
                     FontSize="40" Margin="30" FontFamily="Consolas"
                     VerticalAlignment="Top"></TextBox>
-           <Button Grid.Column="2" 
+        <Button Grid.Column="2" 
                    Height="50" 
                    VerticalAlignment="Top" 
                    Width="100" 
@@ -64,7 +63,6 @@
             <TextBlock Text="reference" 
                        FontSize="14" 
                        FontFamily="Consolas"></TextBlock>
-           </Button>
-      
-   </Grid>
+        </Button>
+    </Grid>
 </Page>

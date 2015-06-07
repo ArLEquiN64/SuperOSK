@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,8 +19,10 @@ namespace HighBridge.ViewModel
         private BitmapFrame _imageSource;
         private Timer _timer;
 
+        public CommentListViewModel ControlData { get; set; }
         public MainPageViewModel()
         {
+            ControlData=new CommentListViewModel();
             TwitterId = AccountManager.MyData.twitter;
             Comment = AccountManager.MyData.comment;
             //_timer=new Timer((state =>
@@ -34,6 +37,7 @@ namespace HighBridge.ViewModel
                 ImageSource = BitmapToBitmapFrame.Convert(VideoCaptureDeviceManager.Bitmap);
             };
         }
+        
 
         public BitmapFrame ImageSource
         {

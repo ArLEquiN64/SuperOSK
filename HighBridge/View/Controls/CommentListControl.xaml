@@ -3,9 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:HighBridge.View.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="600">
     <Grid>
-            
-    </Grid>
+    <ListView  ItemsSource="{Binding ItemsCollection}" DataContext="{Binding}" Background="{x:Null}" BorderBrush="{x:Null}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <control:CommentUnit></control:CommentUnit>
+                
+            </DataTemplate>  
+        </ListView.ItemTemplate>
+    </ListView>
+        <TextBlock Text="{Binding Text}" Foreground="Black"></TextBlock>
+        </Grid>
 </UserControl>

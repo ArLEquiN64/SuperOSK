@@ -4,38 +4,38 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewmodel="clr-namespace:HighBridge.ViewModel"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="600">
+             mc:Ignorable="d" >
     <d:UserControl.DataContext>
         <viewmodel:CommentUnitViewModelIndesign />
     </d:UserControl.DataContext>
     <UserControl.Resources>
     </UserControl.Resources>
-  
-    <Grid Background="White">
-        
-            <Grid>
+
+    <Grid Background="#33B2B2B2" Margin="15">
+        <Grid Height="150" Width="800">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                    <RowDefinition Height="80"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-            <Image Source="{Binding Image}"></Image>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.RowSpan="2" Source="{Binding Image}"></Image>
             <TextBlock Grid.Row="0" 
                        Grid.Column="1"
-                       FontSize="40"
+                       Foreground="Black"
+                       FontSize="30"
                        Text="{Binding Name}">
-                </TextBlock>
-                <TextBlock Width="600" 
+            </TextBlock>
+            <TextBlock Width="600" 
                            Grid.Row="1" 
                            TextWrapping="Wrap" 
+                           Foreground="Black"
                            Text="{Binding Comment}" 
                            Grid.Column="1"
-                           FontSize="30"></TextBlock>
-            </Grid>
-        
+                           FontSize="25"></TextBlock>
+        </Grid>
+
     </Grid>
 </UserControl>
