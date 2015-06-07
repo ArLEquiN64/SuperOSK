@@ -16,13 +16,17 @@ namespace HighBridge.Model
         {
             Bitmap resisedBitmap = ResizeImage(inputBitmap, 4000, 4000);
 
-            ImageConverter imgconv = new ImageConverter();
-            byte[] data = (byte[])imgconv.ConvertTo(resisedBitmap, typeof(byte[]));
+            resisedBitmap.Save(@"Assets\WIN_20150606_191014.jpeg");
+
+            FileStream fs = new FileStream(@"Assets\WIN_20150606_191014.jpeg", FileMode.Open, FileAccess.Read);
+            byte[] data = new byte[fs.Length];
+            fs.Read(data, 0, data.Length);
+            fs.Close();
 
             Dictionary<string, object> postParameters = new Dictionary<string, object>();
             postParameters.Add("apikey", "c334784652d3de937402417a8824880f");
             postParameters.Add("mode", "register");
-            postParameters.Add("inputFile", new FormUpload.FileParameter(data, "ファイル名(?)", "MIMEタイプ"));//MIMEタイプは画像の種類に合わせて指定する。(http://www.iana.org/assignments/media-types/media-types.xhtml)
+            postParameters.Add("inputFile", new FormUpload.FileParameter(data, "WIN_20150606_191014.jpeg", "image/jpeg"));//MIMEタイプは画像の種類に合わせて指定する。(http://www.iana.org/assignments/media-types/media-types.xhtml)
 
             // Create request and receive response
             string postURL = "http://eval.api.polestars.jp:8080/webapi/face.do";//TODO アドレスかえる
