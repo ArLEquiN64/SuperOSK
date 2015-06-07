@@ -15,8 +15,7 @@ namespace HighBridge.ViewModel
     internal class RegisterPageViewModel : ViewModelBase
     {
         private string _deviceName;
-        private string _userName;
-        private Timer _timer;
+        private string _userName="";
 
         public RegisterPageViewModel()
         {
@@ -26,7 +25,7 @@ namespace HighBridge.ViewModel
             });
         }
 
-        private async void AddUser()
+        private void AddUser()
         {
             if (UserName == null) return;
             var newUser = new UserData(FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap), UserName);
@@ -49,7 +48,10 @@ namespace HighBridge.ViewModel
 
         public string UserName
         {
-            get { return _userName; }
+            get
+            {
+                return _userName;
+            }
             set
             {
                 _userName = value; 
