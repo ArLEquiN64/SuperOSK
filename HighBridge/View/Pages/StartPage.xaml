@@ -16,7 +16,7 @@
         <Grid Grid.Row="0" Grid.Column="0">
             <TextBlock Grid.Row="0" 
                    Grid.Column="0" 
-                   Foreground="#FF4F4F4F"
+                   Foreground="{StaticResource DetailBoxBlack}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Text="Facelife" 
@@ -44,7 +44,7 @@
                 <Grid>
                     <Ellipse Width="200" 
                          Height="200" 
-                         Fill="{DynamicResource SelectedDetailBoxBlack}"></Ellipse>
+                         Fill="{DynamicResource DetailBoxBlack}"></Ellipse>
                     <TextBlock Text="Sign Up" 
                           FontSize="40"
                           TextAlignment="Center" 
@@ -64,7 +64,7 @@
                 <Grid>
                     <Ellipse Width="200" 
                          Height="200" 
-                         Fill="{DynamicResource SelectedDetailBoxBlack}"></Ellipse>
+                         Fill="{DynamicResource DetailBoxBlack}"></Ellipse>
                     <TextBlock Text="Sign In" 
                            FontSize="40"
                            TextAlignment="Center" 

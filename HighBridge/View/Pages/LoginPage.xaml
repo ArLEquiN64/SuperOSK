@@ -7,6 +7,7 @@
       xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" 
       xmlns:winForms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
       mc:Ignorable="d" 
+      xmlns:controle="clr-namespace:HighBridge.View.Controls"
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="LoginPage" >
 
@@ -15,9 +16,11 @@
                   Margin="0,80,0,0"
                   VerticalAlignment="Center"
                   HorizontalAlignment="Center">
-        <wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
+        <controle:AlertControl DataContext="{Binding ControleData}"></controle:AlertControl>
+        <!--<wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
             <winForms:PictureBox/>
-        </wfi:WindowsFormsHost>
+        </wfi:WindowsFormsHost>-->
+        
     </Grid>
 
 </Page>

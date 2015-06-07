@@ -18,7 +18,7 @@
                    FontSize="80" 
                    HorizontalAlignment="Center" 
                    FontFamily="Consolas" 
-                  Foreground="{DynamicResource SelectedDetailBoxBlack}"
+                  Foreground="{DynamicResource DetailBoxBlack}"
                    VerticalAlignment="Center"></TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <!--<TextBlock Grid.Column="0" Grid.Row="0" 
@@ -58,7 +58,7 @@
             <Grid>
                 <Ellipse Width="200" 
                          Height="200" 
-                         Fill="{DynamicResource SelectedDetailBoxBlack}"></Ellipse>
+                         Fill="{DynamicResource DetailBoxBlack}"></Ellipse>
                 <TextBlock Text="Face!" 
                           FontSize="40"
                           TextAlignment="Center" 

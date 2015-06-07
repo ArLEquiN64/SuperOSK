@@ -12,11 +12,14 @@
            <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-       <StackPanel>
-           <Image ></Image>
-       </StackPanel>
+       <Grid Background="{StaticResource DetailBoxBlack}">
+            <StackPanel>
+                <Image Width="300" Height="300" Margin="50" Source="/Assets/Background.jpg"></Image>
+            </StackPanel>
+        </Grid>
+       
        <StackPanel Grid.Column="1">
-           <TextBlock Background="White" Height="50" FontSize="40" Margin="20"></TextBlock>
+           <TextBlock Background="#33FFFFFF" Height="50" FontSize="40" Margin="20"></TextBlock>
        </StackPanel>
    </Grid>
 </Page>
