@@ -1,21 +1,27 @@
 ﻿using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace HighBridge.Model
 {
+	[DataContract]
     class UserData
     {
-        public string FaceId { get; set; }
-        public string Name { get; set; }
-        public string TwitterId { get; set; }
-        public string Comment { get; set; }
-        public Bitmap Bitmap { get; set; }
+		[DataMember]
+		public string faceId { get; set; }
+		[DataMember]
+		public string name { get; set; }
+		[DataMember]
+		public string twitterId { get; set; }
+		[DataMember]
+		public string comment { get; set; }
+		[DataMember]
+        public string bitmap { get; set; }
 
-        public UserData(string iD,string name)
-        {
-            this.FaceId = iD;
-            this.Name = name;
-            TwitterId = "";
-            Comment = "";
-        }
     }
 }
