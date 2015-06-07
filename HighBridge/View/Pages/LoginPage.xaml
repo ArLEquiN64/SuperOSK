@@ -20,7 +20,6 @@
         <!--<wfi:WindowsFormsHost Loaded="WindowsFormsHost_Loaded">
             <winForms:PictureBox/>
         </wfi:WindowsFormsHost>-->
-        
     </Grid>
 
 </Page>

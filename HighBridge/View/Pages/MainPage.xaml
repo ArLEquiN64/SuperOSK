@@ -11,15 +11,27 @@
        <Grid.ColumnDefinitions>
            <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
        <Grid Background="{StaticResource DetailBoxBlack}">
             <StackPanel>
-                <Image Width="300" Height="300" Margin="50" Source="/Assets/Background.jpg"></Image>
+                <TextBlock FontSize="40" 
+                           Foreground="White" 
+                           FontFamily="Consolas"
+                           Text="wang"
+                           Margin="50,0,0,0"></TextBlock>
+                <Image Width="300" Height="300" Margin="50,0,50,50" Source="/Assets/Background.jpg"></Image>
+           
             </StackPanel>
         </Grid>
        
-       <StackPanel Grid.Column="1">
-           <TextBlock Background="#33FFFFFF" Height="50" FontSize="40" Margin="20"></TextBlock>
-       </StackPanel>
+   
+           <TextBox Grid.Column="1" Background="White" Height="50" 
+                    FontSize="40" Margin="20"
+                    VerticalAlignment="Top"></TextBox>
+           <Button Grid.Column="2" Height="50" VerticalAlignment="Top" Width="100" Margin="20">
+               <TextBlock Text="reference" FontSize="14"></TextBlock>
+           </Button>
+      
    </Grid>
 </Page>
