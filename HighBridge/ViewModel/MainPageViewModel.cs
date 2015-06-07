@@ -20,8 +20,8 @@ namespace HighBridge.ViewModel
 
         public MainPageViewModel()
         {
-            TwitterId = AccountManager.MyData.TwitterId;
-            Comment = AccountManager.MyData.Comment;
+            TwitterId = AccountManager.MyData.twitter;
+            Comment = AccountManager.MyData.comment;
             //_timer=new Timer((state =>
             //{
             //    if (VideoCaptureDeviceManager.Bitmap==null)return;

@@ -14,7 +14,7 @@ namespace HighBridge.Model
 {
     static class AccountManager
     {
-		public 
+	
         static AccountManager()
         {
 

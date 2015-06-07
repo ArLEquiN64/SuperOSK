@@ -28,8 +28,10 @@ namespace HighBridge.ViewModel
         private void AddUser()
         {
             if (UserName == null) return;
-            var newUser = new UserData(FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap), UserName);
-            AccountManager.AddUser(newUser);
+            //var newUser = new UserData(FaceDate.GetFaceDate(VideoCaptureDeviceManager.Bitmap), UserName);
+            //newUser.name = UserName;
+            //newUser.image
+            //AccountManager.AddUser(newUser);
         }
 
 

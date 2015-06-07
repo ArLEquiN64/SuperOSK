@@ -16,8 +16,8 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-       
-       <Grid Background="{StaticResource DetailBoxBlack}">
+
+        <Grid Background="{StaticResource DetailBoxBlack}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -34,14 +34,14 @@
                        Height="300" 
                        Margin="0,0,0,50" 
                        Source="{Binding ImageSource}"></Image>
-                
+
                 <TextBlock Text="twitter" 
                            Foreground="White"></TextBlock>
                 <TextBlock Text="{Binding TwitterId}" 
                            FontSize="30"
                            Margin="0,0,0,50"
                            Foreground="White">
-                          </TextBlock>
+                </TextBlock>
                 <TextBlock Text="comment" Foreground="White"></TextBlock>
 
                 <TextBlock Text="{Binding Comment}"
@@ -51,13 +51,19 @@
                             Background="#33FFFFFF"></TextBlock>
             </StackPanel>
         </Grid>
-       
-   
-           <TextBox x:Name="TextBox" Grid.Column="1" Background="White" Height="50" 
+
+        <TextBox x:Name="TextBox" Grid.Column="1" Background="White" Height="50" 
                     FontSize="40" Margin="30" FontFamily="Consolas"
                     VerticalAlignment="Top"></TextBox>
-           <Button Grid.Column="2" Height="50" VerticalAlignment="Top" Width="100" Margin="20" Click="Reference_Click">
-            <TextBlock Text="reference" FontSize="14" FontFamily="Consolas"></TextBlock>
+           <Button Grid.Column="2" 
+                   Height="50" 
+                   VerticalAlignment="Top" 
+                   Width="100" 
+                   Margin="30" 
+                   Click="Reference_Click">
+            <TextBlock Text="reference" 
+                       FontSize="14" 
+                       FontFamily="Consolas"></TextBlock>
            </Button>
       
    </Grid>
