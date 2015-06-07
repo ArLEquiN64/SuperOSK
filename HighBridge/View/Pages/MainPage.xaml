@@ -7,27 +7,54 @@
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="MainPage">
+    <Page.Resources>
+       
+    </Page.Resources>
    <Grid>
        <Grid.ColumnDefinitions>
            <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="150"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+       
        <Grid Background="{StaticResource DetailBoxBlack}">
-            <StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
                 <TextBlock FontSize="40" 
                            Foreground="White" 
                            FontFamily="Consolas"
                            Text="wang"
-                           Margin="50,0,0,0"></TextBlock>
-                <Image Width="300" Height="300" Margin="50,0,50,50" Source="/Assets/Background.jpg"></Image>
-           
+                           Margin="0,30,0,0"
+                           ></TextBlock>
+                <Image Width="350" 
+                       Height="300" 
+                       Margin="0,0,0,50" 
+                       Source="{Binding ImageSource}"></Image>
+                
+                <TextBlock Text="twitter" 
+                           Foreground="White"></TextBlock>
+                <TextBlock Text="{Binding TwitterId}" 
+                           FontSize="30"
+                           Margin="0,0,0,50"
+                           Foreground="White">
+                          </TextBlock>
+                <TextBlock Text="comment" Foreground="White"></TextBlock>
+
+                <TextBlock Text="{Binding Comment}"
+                            FontSize="30"
+                            Height="200"
+                            Foreground="White"
+                            Background="#33FFFFFF"></TextBlock>
             </StackPanel>
         </Grid>
        
    
            <TextBox x:Name="TextBox" Grid.Column="1" Background="White" Height="50" 
-                    FontSize="40" Margin="20" FontFamily="Consolas"
+                    FontSize="40" Margin="30" FontFamily="Consolas"
                     VerticalAlignment="Top"></TextBox>
            <Button Grid.Column="2" Height="50" VerticalAlignment="Top" Width="100" Margin="20" Click="Reference_Click">
             <TextBlock Text="reference" FontSize="14" FontFamily="Consolas"></TextBlock>

@@ -10,7 +10,10 @@
         <Color x:Key="TextBoxBorderColor">#FFE0DADE</Color>
         <Color x:Key="DetailBoxBlackColor">#FF2A1424</Color>
         <Color x:Key="SelectedDetailBoxBlackColor">#FF474747</Color>
-      
+        <Style TargetType="TextBlock">
+          <Setter Property="FontFamily" Value="Consolas"></Setter>
+          <Setter Property="FontSize" Value="30"></Setter>
+        </Style>
 
         <SolidColorBrush x:Key="OneNotePurple" Color="{StaticResource OneNotePurpleColor}"/>
         <SolidColorBrush x:Key="SelectedOneNotePurple" Color="{StaticResource SelectedOneNotePurpleColor}"/>

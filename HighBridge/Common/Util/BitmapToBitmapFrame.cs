@@ -9,6 +9,7 @@ namespace HighBridge.Common.Util
     {
         internal static BitmapFrame Convert(Bitmap src)
         {
+            
             using (var stream = new MemoryStream())
             {
                 src.Save(stream, ImageFormat.Bmp);
