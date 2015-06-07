@@ -8,7 +8,6 @@
       d:DesignHeight="800" d:DesignWidth="1280"
 	Title="RegisterPage">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -29,10 +28,7 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Right "
                            Margin="0,0,100,0" />-->
-
-
-
-        <TextBox HorizontalAlignment="Left" 
+            <TextBox HorizontalAlignment="Left" 
                          Grid.Column="1" Grid.Row="0" 
                  TextAlignment="Center"
                          x:Name="NameBox" 
@@ -42,9 +38,9 @@
                      FontFamily="Consolas" 
                      Height="50" Background="#33FFFFFF"/>
 
-                </StackPanel>
+        </StackPanel>
 
-                <Button
+        <Button
             Grid.Row="2"
                 Margin="60"
                 x:Name="SignUp" 
